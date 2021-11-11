@@ -1,50 +1,48 @@
-/* 18) Faça um algoritmo que leia duas frases (de no máximo 20 caracteres cada uma) e imprima se as frases
-possuem o mesmo comprimento, bem como se são iguais ou diferentes no conteúdo. Exemplo:
-Frase 1: Brasil Hexa 2010
-Frase 2: Brasil! Hexa 2010!
-Resultado: As duas frases são de tamanhos diferentes. As duas frases possuem conteúdo distintos.
-Obs.: Considere que as frases não iniciam e nem terminam com espaço, bem como só existe um único espaço
-entre as palavras das frases. FEITA */
+/* 18) Faça um algoritmo que leia uma palavra (com no máximo 15 caracteres) e depois embaralhe os caracteres
+da mesma, fazendo a sua impressão ao nal. Por exemplo: recebendo a palavra python, pode ser retornado
+npthyo, ophtyn ou qualquer outra combinação possível, de forma aleatória. Crie e utilize dois procedimentos:
+um para ler a palavra e outro para embaralhar e imprimir a mesma ao nal.
+Obs. 1: Não é permitido utilizar qualquer estrutura de dados auxiliar.
+Obs. 2: Considere que o usuário digitará somente letras minúsculas. */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-#define tam 21
+#define tam 15
+
+void ler(char vet[tam])
+{
+	printf("Digite a palavra:\n");
+	scanf("%s", vet);
+}
+
+void embaralhar(char vet[tam])
+{
+	int len,i,aleatorio;
+	
+	char aux;
+	
+	len = strlen(vet);
+	
+	for(i=0;i<tam;i++){
+		aux = vet[i];
+		aleatorio = vet[rand () % len];
+		vet[i] = vet[aleatorio];
+		vet[aleatorio] = aux;
+	}
+	for(i=0;i<tam;i++)
+	{
+		printf("%c", vet[i]);
+	}
+}
 
 int main(){
-	char frase1[tam];
-	char frase2[tam];
-	int aux1=0,aux2=0;
+	char vet[tam];
 	
-	printf("Digite a primeira frase:\n");
-	scanf("%[^\n]s", frase1);
-	
-	setbuf(stdin, NULL);		
-	
-	printf("Digite a segunda frase:\n");
-	scanf("%[^\n]s", frase2);
-	
-	aux1 = strlen(frase1);
-	aux2 = strlen(frase2);
-	
-	if(aux1 == aux2)
-		{
-			printf("O tamanho das frases e igual.");
-			{
-				if(strcmp(frase1, frase2) == 0 )
-				{
-				printf("Seu conteudo tambem e igual.");
-				}
-				if(strcmp(frase1, frase2) != 0)
-				{
-				printf("Seu conteudo e diferente.");
-				}
-			}
-		}
-	if(aux1 != aux2)
-	{
-		printf("O tamanho das frases e seu conteudo sao diferentes.");
-	}
+	srand(time(NULL));
+	ler(vet);
+	embaralhar(vet);
 	
 	return 0;
 }

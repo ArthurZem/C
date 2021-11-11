@@ -1,3 +1,5 @@
+/* Faça um algoritmo com um vetor de 3 posições e que mostre qual é o maior valor deste vetor e sua posição */
+
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,49 +1,42 @@
-/*16) Faça um algoritmo para ler (pelo teclado) os 30 elementos de um vetor do tipo inteiro e verificar se o mesmo
-está em ordem não-crescente. Crie e utilize um procedimento para preencher o vetor e uma função para a
-verificação. A impressão da informação (se o vetor está ou não em ordem não-crescente) deve ser na função
-main. FEITA*/
-
-
+/* 	16) Faça um algoritmo que leia pelo teclado os 20 números do vetor A e construa um vetor B com os mesmos
+números de A, sendo que estes deverão estar invertidos. Ou seja, o primeiro número de A passa a ser o último
+2
+de B, o segundo de A passa a ser o penúltimo de B e assim por diante. Crie e utilize dois procedimentos:
+um para ler o vetor A e outro para preencher o vetor B FEITO */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-#define tam 30
+#define tam 5
 
-void preencher(int vetor[tam]){
-	int i=0;
+void ler(int vetA[tam])
+{
+	int i;
 	
-	printf("Insira os 30 valores do vetor:\n");
-	for(i=0;i<tam;i++){
-		scanf("%d", &vetor[i]);
+	for(i=0;i<tam;i++)
+	{
+		printf("Digite o valor para o vetor A:\n");
+		scanf("%d", &vetA[i]);
 	}
-	
 }
 
-int verificar(int vetor[tam]){
-	int i=0,cont=0;
+void preencher(int vetA[tam], int vetB[tam])
+{
+	int i,k;
 	
-	for(i=0; i<tam;i++){
-	if(vetor[i] < vetor[i+1]){
-		cont++;
+	for(i=0,k=tam-1;i<tam;i++,k--)
+	{
+		vetB[k] = vetA[i];
 	}
-		
+	for(i=0;i<tam;i++)
+	{
+		printf("Vetor B: %d\n", vetB[i]);
 	}
-	return cont;
 }
-
 
 int main(){
-	int vetor[tam], aux=0;
+	int vetA[tam],vetB[tam];
 	
-	preencher(vetor);
-	aux=verificar(vetor);
-	if(aux==0)
-	{
-		printf("O vetor esta em ordem decrescente");
-	}
-	else{
-		printf("O vetor nao esta em ordem decrescente");
-	}
-
-return 0;
+	ler(vetA);
+	preencher(vetA,vetB);
 }

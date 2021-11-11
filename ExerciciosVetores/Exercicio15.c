@@ -1,4 +1,4 @@
-/* 19) Faça um algoritmo para ler uma palavra pelo teclado (com no máximo 15 caracteres) e vericar se ela é
+/* 15) Faça um algoritmo para ler uma palavra pelo teclado (com no máximo 15 caracteres) e vericar se ela é
 Palíndrome ou não, sem utilizar qualquer estrutura de dados auxiliar. Crie e utilize um procedimento
 para ler a palavra e uma função para fazer a vericação. A impressão da mensagem (se a palavra é ou não
 Palíndrome) deve ser na função main.

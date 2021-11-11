@@ -1,43 +1,55 @@
-
-/*17) Faça um algoritmo para ler duas palavras (com no máximo 10 caracteres cada uma) e imprimir a menor
-delas ou se elas têm o mesmo tamanho. Crie e utilize dois procedimentos: um para ler as palavras e outro
-para imprimir o que se pede.
-Obs.: Considere que o usuário digitará somente letras minúsculas. FEITA */
-
+/* 17) Faça um algoritmo que preencha o vetor A com 20 números inteiros gerados aleatoriamente de 0 até 10.
+Em seguida, preencha o vetor B onde cada elemento Bi receba o fatorial do elemento Ai, com 0 < i < 19. Crie
+e utilize dois procedimentos: um para preencher o vetor A e outro para preencher o vetor B. Crie e utilize
+também uma função para calcular o fatorial de um número. */
 
 #include <stdio.h>
-#include <string.h>
 
-void ler(char palavra1[11], char palavra2[11]){
+#define tam 5
+
+void vetorA(int vetA[tam]){
+	int i;
 	
-	printf("Digite as duas palavras:\n");
-	scanf("%s %s", palavra1,palavra2);
-	
+	for(i=0;i<tam;i++)
+	{
+		vetA[i] = rand() % 10;
+	}
+		
 }
 
-void imprimir(char palavra1[11], char palavra2[11]){
-	int aux1, aux2;
+int calculaFatorial(int vetA[tam]){
+	int i,k=0,resultado;
 	
-	aux1 = strlen(palavra1);
-	aux2 = strlen(palavra2);
+		for(i=1;i<vetA[k];i++,k++)
+		{
+			resultado+= i*vetA[k];
+			return resultado;
+		}
+	return 0;
+}
+void vetorB(int vetB[tam],int vetA[tam]){
+	int i;
 	
-	if(aux1 > aux2){
-		printf("%s e a maior string", palavra1);
+	for(i=0;i<tam;i++)
+	{
+		vetB[i] = calculaFatorial(vetA);
 	}
-	if(aux2 > aux1){
-		printf("%s e a maior string", palavra2);
-	}
-	if(aux1 == aux2){
-		printf("O tamanho das duas palavras e igual");
+	
+	for(i=0;i<tam;i++)
+	{
+		printf("Vetor B posicao %d: %d\n", i+1,vetB[i]);
 	}
 }
+
 int main(){
-	char palavra1[11], palavra2[11];
+	int vetA[tam],vetB[tam],resultado;
 	
-	ler(palavra1, palavra2);
-	imprimir(palavra1, palavra2);
+	srand(time(NULL));
+	
+	
+	vetorA(vetA);
+	resultado = calculaFatorial(vetA);
+	vetorB(vetB);
 	
 	return 0;
 }
-	
-	
