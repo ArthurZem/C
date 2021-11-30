@@ -1,0 +1,26 @@
+1. Implementar um programa para armazenar números inteiros em uma lista encadeada. O programa deverá
+apresentar um menu com as seguintes opções:
+(a) Inclusão de elemento no início da lista
+(b) Inclusão de elemento no fim da lista
+(c) Exclusão de elemento do inicio da lista
+(d) Exclusão de elemento do fim da lista
+(e) Impressão dos elementos da lista
+(f) Limpar a lista - Excluir todos os elementos
+(g) Finalização do Programa
+
+Caso seja escolhida uma opção de inclusão, o usuario devera digitar o numero a ser incluido. Caso seja
+escolhida a opção de Finalização do Programa, todos os elementos restantes na estrutura de dados deverão
+ser desalocados para só depois o programa ser encerrado.
+
+2. Implementar um programa para armazenar nomes em uma lista encadeada ordenada. O programa deverá
+apresentar um menu com as seguintes opções:
+(a) Inclusão de Nome
+(b) Exclusão de Nome
+(c) Busca por um Nome
+(d) Limpar a lista - Excluir todos os elementos
+(e) Finalização do Programa
+Caso seja escolhida uma opção de inclusão, o usuário deverá digitar o nome a ser incluído.
+Caso seja escolhida a opção de busca, um nome deverá ser digitado pelo usuário e verificada a existência
+do mesmo na lista. O programa deverá imprimir em que posição da lista o nome foi encontrado.
+Quando escolhida a opção de Finalização do Programa, todos os elementos restantes na estrutura de dados
+deverão ser desalocados para só depois o programa ser encerrado.
